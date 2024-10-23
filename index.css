@@ -1,0 +1,1097 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nerko+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --fontNerko : "Nerko One", cursive;
+    --fontRoboto : "Roboto", system-ui;
+    --fontPoppins :"Poppins", system-ui;
+    --fontOpenSans :"Open Sans", system-ui;
+    --fontIbmPlexSans : "IBM Plex Sans", system-ui;
+    --fontHind :"Hind", system-ui;
+    --primary: rgb(230,232, 222);
+    --palegreen: rgb(96,134,113);
+    --palegreen-dark: rgb(96,134,119);
+    --grey-light:rgb(102, 103 , 103);
+    --onhover-bg: rgb(59 59 59 / 23%);
+    --palegreen-accent: rgb(130,138 ,89);
+    --primary-accent : rgb(245, 247,237);
+    --light-back: rgb(237, 247, 243);
+    --body-fg: #C1CAD2;
+    --body-bg: #0e1117;
+    --logo-bg: #272c27;
+    --text-l10: #93D7B7;
+    --text-l20: #C9F0DD;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    padding: 0 70px ;
+}
+.navbar{
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+}
+.navleft{
+    height: auto;
+    width: auto;
+    padding: 6px 0;
+}
+.navleft img{
+    height: 85px;
+    width: 99px;
+    object-fit: cover;
+}
+.navmid{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navitems{
+    margin: 0 10px ;
+    font-size: 18px;
+    font-family: var(--fontHind);
+    cursor: pointer;
+}
+.navitems a{
+    padding: 4px 6px;
+    text-decoration: none;
+    color: grey;
+    transition: 0.2s ease all;
+}
+.navitems.selected a{
+    color: black;
+    border-bottom: 0.1px solid black;
+}
+.navitems a:hover{
+    color: black;
+    border-bottom: 0.1px solid black;
+}
+.navright{
+    height: auto;
+    width: auto;
+    padding: 6px 0;
+    display: flex;
+}
+.navright span{
+    height: auto;
+    width: auto;
+    padding: 8px;
+    border-radius: 50%;
+    color: white;
+    background-color: var(--palegreen);
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transform: 0.2s ease all;
+}
+.navright span:hover{
+    background-color: var(--palegreen-accent);
+}
+
+.navMenuBar{
+    height: auto;
+    width: auto;
+    padding: 0 6px;
+    display: none;
+}
+.onclickMenubar{
+    position: absolute;
+    right: 0;
+    top: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: var(--body-fg);
+    z-index: 2;
+    display: none;
+
+}
+.onclickMenubar.active{
+    display: flex;
+}
+.onclickMenubarList{
+    padding: 6px 20px;
+    &:hover{
+        background-color: rgba(128, 128, 128, 0.359);
+    }
+}
+.main{
+    height: auto;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 20px;
+    padding: 70px 30px;
+}
+.mainGrid{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.mainGridLeft{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    padding: 0 20px;
+}
+.mainGridLeftIntro{
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: capitalize;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin: 15px 0;
+}
+.mainGridLeftDummy{
+    width: 80%;
+   font-size: 15px;
+   color: var(--grey-light);
+   font-weight: 400;
+   letter-spacing: 0.6px;
+   margin: 15px 0;
+}
+.inputBar{
+    height: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    background-color: white;
+    border-radius: 24px;
+    margin: 15px 0;
+    position: relative;
+    transition: 0.2s ease all;
+}
+.inputBar.styleBorder{
+    border-radius: 10px 10px 0 0;
+}
+.inputBar input[type="text"]{
+    
+    height: 100%;
+    width: calc(100% - 40px);
+    padding: 14px 5px;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+.searchListMenu{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+    display: none;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.searchListMenu ul{
+    padding: 10px;
+}
+.searchListMenu ul li{
+    padding: 6px;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--primary);
+    }
+}
+
+.mainGridLeftButtons{
+    height: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+    padding: 10px 0;
+}
+.mainGridLeftButtons button{
+    padding: 10px 60px;
+    border-radius: 24px;
+    white-space: nowrap;
+
+}
+.mainGridLeftButtons button:nth-child(1){
+    border: 0;
+   background-color: var(--palegreen-dark);
+   color: white;
+   font-size: 15px;
+   font-weight: 400;
+   transition: 0.2s ease background-color, color;
+}
+.mainGridLeftButtons button:nth-child(1):hover{
+    border: 1px solid var(--palegreen);
+    background-color: transparent;
+    color: var(--palegreen);
+}
+.mainGridLeftButtons span{
+    color: var(--palegreen);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.mainGridLeftButtons button:nth-child(3){
+   border: 1px solid var(--palegreen);
+   background-color: transparent;
+   color: var(--palegreen);
+   font-size: 15px;
+   font-weight: 400;
+   transition: 0.2s ease all;
+}
+.mainGridLeftButtons button:nth-child(3):hover{
+    background-color: var(--palegreen-dark);
+    color: white;
+}
+.mainGridRight{
+    height: auto;
+    width: 100%;
+    padding: 0 20px;
+    background-image: url('backlines.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.mainGridRight img:nth-child(1){
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    border: 10px solid var(--palegreen-dark);
+}
+.mainGridRight img:nth-child(2){
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 10px solid var(--primary-accent);
+    margin: 40px 0 0 200px;
+}
+
+.arrowAbsolute{
+    position: absolute;
+    left: 50px;
+    top: 80px;
+}
+.arrowAbsolute img{
+    height: 200px;
+    width: 100px;
+}
+
+.threeDivDescribe{
+    margin: 60px 0;
+    padding: 0;
+}
+
+.rowdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 30px;
+}
+.iconLog{
+    height: auto;
+    width: auto;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+.iconLog span{
+    font-size: 22px;
+    color: var(--palegreen);
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24
+}
+.rowdiv h5{
+    margin: 5px 0;
+    text-transform: capitalize;
+}
+.rowdiv p{
+    font-size: 14px;
+    color: var(--grey-light);
+    text-align: center;
+    font-weight: 300;
+}
+.specialDiv{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+}
+.specialDivTitle{
+   height: auto;
+   width: 100%;
+   text-align: center;
+   padding: 10px 0; 
+   text-transform: capitalize;
+   font-size: 35px;
+   font-weight: 900;
+   letter-spacing: 1px;
+}
+.specialDivIntro{
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0; 
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--grey-light);
+    display: flex;
+    justify-content: center;
+}
+.specialDivIntro p{
+    max-width: 600px;
+}
+.menuCardDiv{
+    margin: 30px 0;
+    padding: 0;
+    
+}
+.menuCardDiv .row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.menuCardDiv div{
+    display: flex;
+    justify-content: center;
+}
+.menuCard{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    background-color: var(--primary-accent);
+    border-radius: 16px;
+    padding: 12px;
+    position: relative;
+}
+.menuCardTop{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.menuCardTop span:nth-child(1){
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--palegreen);
+    transition: 0.2s ease all;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24
+}
+.menuCardTop > span:nth-child(1):hover{
+    background-color: var(--palegreen);
+    color: black;
+}
+.menuCardTop span:nth-child(2){
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+}
+.menuCardTop span span:nth-child(1){
+    border-radius: 50%;
+    background-color: inherit;
+    color: rgb(248, 165, 11);
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+.menuCardTop span span:nth-child(2){
+   font-size: 14px;
+}
+.menuCardTop span:nth-child(3) {
+    height: 200px;
+    width: 180px;
+    border-radius: 50%;
+    position: relative;
+}
+.menuCardTop span:nth-child(3) img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    border-radius: 50%;
+}
+.menuCardMid{
+    height: auto;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.menuCardBottom{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between !important;
+    font-size: 25px;
+    font-weight: 600;
+}
+.menuCardBottom button{
+    border: 1px solid var(--palegreen);
+    background-color: transparent;
+    color: var(--palegreen);
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.2s ease all;
+    padding: 10px 50px;
+    border-radius: 24px;
+    white-space: nowrap;
+    &:hover{
+        background-color: var(--palegreen-dark);
+        color: white;
+    }
+}
+.bannerImg{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 100px 0;
+    margin-bottom: 320px;
+}
+.bannerImgLeft{
+    height: auto;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bannerImgLeft img{
+    height: 90%;
+}
+.bannerImgRight{
+    height: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.bannerImgRight p:nth-child(1){
+    width: 80%;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.bannerImgRight p:nth-child(2){
+    width: 80%;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--grey-light);
+}
+
+.bannerImgRight button{
+    margin: 25px 0;
+    border: 0;
+    padding: 10px 40px;
+    border-radius: 28px;
+    white-space: nowrap;
+    background-color: var(--palegreen-dark);
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.2s ease background-color, color;
+    &:hover{
+        border: 1px solid var(--palegreen);
+        background-color: transparent;
+        color: var(--palegreen);
+    }
+}
+.bannerImgRight img{
+    height: 400px;
+    width: 230px;
+    position: absolute;
+    bottom: -250px;
+    right: 20px;
+}
+.menuDiv{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 30px;
+    background-color: var(--light-back);
+}
+
+.menuDiv> p:nth-child(1){
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+.menuDiv> p:nth-child(2){
+    width: 50%;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.menuDivButtons{
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.menuDivButtons button{
+    padding: 6px 20px;
+    border-radius: 24px;
+    white-space: nowrap;
+    border: 1px solid var(--palegreen);
+    background-color: transparent;
+    color: var(--palegreen);
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.2s ease all;
+    text-transform: capitalize;
+    margin-right: 10px;
+}
+.menuDivButtons button.selected{
+    background-color: var(--palegreen-dark);
+    color: white;
+}
+.menuDivButtons button:hover{
+    background-color: var(--palegreen-dark);
+    color: white;
+}
+.mainMenuDivRow .menuCard{
+    background-color: white;
+}
+.afterAddCart{
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid var(--palegreen);
+    background-color: transparent;
+    color: var(--palegreen);
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.2s ease all;
+    padding: 4px 10px;
+    border-radius: 24px;
+
+}
+.afterAddCart span{
+    padding: 0 15px;
+}
+.afterAddCart span:nth-child(1),.afterAddCart span:nth-child(3) {
+    height: auto;
+    width: auto;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 50%;
+    &:hover{
+        color: white;
+        background-color: var(--palegreen);
+    }
+}
+.mainMenuDivRow > div{
+    display: flex;
+    justify-content: center;
+}
+
+.bannerImg2{
+    margin: 50px 0;
+    height: 400px;
+    width: 100%;
+    border-radius: 26px;
+    background-image: url("https://i.pinimg.com/564x/e3/30/c9/e330c98e6611e32f4c573fbf6b2223ea.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bannerImg2 p{
+    width: max-content;
+    font-size: 50px;
+    color: white;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+.inputEmailDiv{
+    height: auto;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-radius: 24px;
+    padding: 10px 8px;
+    margin: 10px 0;
+}
+
+.inputEmailDiv input{
+    height: 100%;
+    width: calc(100% - 100px);
+    padding: 0 5px;
+    border: 0;
+    outline: 0;
+}
+.inputEmailDiv span{
+    width: 100px;
+    background-color: var(--palegreen);
+    word-wrap: nowrap;
+    text-align: center;
+    border-radius: 16px;
+    padding: 6px 0;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s ease all;
+}
+.inputEmailDiv span:hover{
+    transform: scale(1.04);
+}
+@media (min-width: 768px) {
+    .col-md-12 {
+        margin-top: 30px;
+    }
+}
+@media (min-width: 0) {
+    .col-sm-12 {
+        margin-top: 30px;
+}}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: var(--primary);
+    padding: 70px 30px;
+    border-radius: 24px;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col ul{
+    padding-left: 0;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: black;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: var(--grey-light);
+	text-decoration: none;
+	font-weight: 400;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: black;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: var(--grey-light);
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: white;
+	background-color: var(--palegreen);
+}
+
+/*responsive*/
+@media (max-width: 1155px) and (min-width: 992px) {
+    .mainGridLeftButtons button{
+        padding: 8px 30px;
+    }
+    .mainGridRight img:nth-child(1){
+        height: 200px;
+        width: 200px;
+    }
+    .mainGridRight img:nth-child(2){
+        height: 250px;
+        margin: 40px 0 0 96px;
+    }
+    .menuCard{
+        width: 250px;
+    }
+    .menuCardMid{
+        font-size: 15px;
+    }
+    .menuCardTop span:nth-child(3){
+        height: 180px;
+        width: 160px;
+    }
+    .menuCardBottom{
+        font-size: 22px;
+    }
+    .menuCardBottom button{
+        padding: 6px 28px;
+    }
+    .afterAddCart{
+        padding: 4px 6px;
+    }
+    .afterAddCart span:nth-child(1), .afterAddCart span:nth-child(3){
+        padding: 2px;
+        font-size: 18px;
+    }
+    .bannerImgRight img{
+        bottom: -300px;
+    }
+}
+@media (max-width: 991px){
+    body{
+        padding: 0 50px;
+    }
+    .navleft img{
+        height: 75px;
+        width: 89px;
+    }
+    .navitems{
+        font-size: 15px;
+    }
+    .navright span{
+        padding: 6px;
+        font-size: 15px;
+    }
+    .mainGridLeftIntro{
+        font-size: 30px;
+    }
+    .mainGridLeftDummy{
+        width: 100%;
+        font-size: 12px;
+    }
+    .inputBar{
+        width: 100%;
+        padding: 0 6px;
+    }
+    .inputBar input::placeholder{
+        font-size: 14px;
+    }
+    .mainGridLeftButtons button{
+        padding: 5px 25px;
+        margin: 0 6px;
+    }
+    .mainGridRight img:nth-child(1){
+        height: 140px;
+        width: 140px;
+    }
+    .mainGridRight img:nth-child(2) {
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+        border: 10px solid var(--primary-accent);
+        margin: 20px 0 0 100px;
+    }
+    .menuCard{
+        width: 290px;
+    }
+    .menuCardMid{
+        font-size: 13px;
+    }
+    .menuCardTop span:nth-child(3){
+        height: 150px;
+        width: 130px;
+    }
+    .menuCardBottom{
+        font-size: 18px;
+    }
+    .menuCardBottom button{
+        padding: 4px 20px;
+    }
+    .afterAddCart{
+        padding: 0px 5px;
+    }
+    .afterAddCart span:nth-child(1), .afterAddCart span:nth-child(3){
+        padding: 1px;
+        font-size: 15px;
+    }
+    .bannerImg{
+        margin-bottom: 200px;
+    }
+    .bannerImgLeft img{
+        height: 80%;
+    }
+    .bannerImgRight p:nth-child(1){
+        font-size: 30px;
+    }
+    .bannerImgRight p:nth-child(2){
+        font-size: 12px;
+    }
+    .bannerImgRight img{
+        height: 300px;
+        bottom: -180px;
+    }
+    .menuDiv> p:nth-child(1){
+        font-size: 35px;
+    }
+    .menuDiv> p:nth-child(2){
+        font-size: 12px;
+    }
+    .bannerImgRight button{
+        padding: 6px 25px;
+        font-size: 12px;
+    }
+    .menuDivButtons button{
+        padding: 4px 16px;
+        font-size: 12px;
+    }
+    .bannerImg2{
+        height: 300px;
+    }
+    .bannerImg2 p{
+        font-size: 30px;
+    }
+    .inputEmailDiv{
+    padding: 4px 8px;
+    }
+    .inputEmailDiv span{
+        padding: 4px 0;
+        font-size: 14px;
+    }
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+}
+@media(max-width: 767px){
+    body{
+        padding: 0 20px;
+    }
+
+    .navmid{
+        display: none;
+    }
+    .navright{
+        display: none;
+    }
+    .navMenuBar{
+        display: block;
+    }
+    .arrowAbsolute{
+        left: 10px;
+    }
+    .arrowAbsolute img{
+        height: 100px;
+    }
+    .navleft img{
+        height: 55px;
+        width: 49px;
+    }
+    .main{
+        padding: 50px 15px;
+    }
+    .mainGridLeft{
+        padding: 0 6px;
+    }
+
+    .mainGridLeftIntro{
+        font-size: 14px;
+    }
+    .mainGridLeftDummy{
+        width: 100%;
+        font-size: 8px;
+    }
+    .inputBar input[type="text"]{
+        font-size: 10px;
+        padding: 10px 5px;
+    }
+    .inputBar{
+        position: relative;
+        width: 100%;
+        padding: 0 4px;
+    }
+    .inputBar span{
+        font-size: 16px;
+    }
+    .searchInput::placeholder{
+        font-size: 14px;
+    }
+  
+
+    .mainGridLeftButtons button{
+        padding: 3px 15px;
+        margin: 0 4px;
+        font-size: 10px;
+    }
+    .mainGridLeftButtons span{
+        font-size: 10px;
+    }
+    .mainGridLeftButtons button:nth-child(1){
+        font-size: 10px;
+    }
+    .mainGridLeftButtons button:nth-child(3){
+        font-size: 10px;
+    }
+    .mainGridRight img:nth-child(1){
+        height: 80px;
+        width: 80px;
+        border: 4px solid var(--palegreen-dark);
+    }
+    .mainGridRight img:nth-child(2) {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 4px solid var(--primary-accent);
+        margin: 20px 0 0 50px;
+    }
+    .specialDivTitle{
+        font-size: 25px;
+    }
+    .menuCard{
+        width: 290px;
+    }
+    .menuCardMid{
+        font-size: 13px;
+    }
+    .menuCardTop span:nth-child(3){
+        height: 150px;
+        width: 130px;
+    }
+    .menuCardBottom{
+        font-size: 18px;
+    }
+    .menuCardBottom button{
+        padding: 4px 20px;
+    }
+    .afterAddCart{
+        padding: 0px 5px;
+    }
+    .afterAddCart span:nth-child(1), .afterAddCart span:nth-child(3){
+        padding: 1px;
+        font-size: 15px;
+    }
+    .bannerImg{
+        margin-bottom: 200px;
+    }
+    .bannerImgLeft img{
+        height: 50%;
+    }
+    .bannerImgRight p:nth-child(1){
+        font-size: 24px;
+    }
+    .bannerImgRight p:nth-child(2){
+        font-size: 12px;
+    }
+    .bannerImgRight img{
+        height: 300px;
+        bottom: -180px;
+    }
+    .menuDiv> p:nth-child(1){
+        font-size: 35px;
+    }
+    .menuDiv> p:nth-child(2){
+        font-size: 12px;
+    }
+    .bannerImgRight button{
+        padding: 6px 25px;
+        font-size: 12px;
+    }
+    .menuDivButtons button{
+        padding: 2px 8px;
+        font-size: 8px;
+        margin-right: 3px;
+    }
+    .bannerImg2{
+        height: 300px;
+    }
+    .bannerImg2 p{
+        font-size: 20px;
+    }
+    .inputEmailDiv input{
+        font-size: 10px;
+    }
+    .inputEmailDiv{
+        width: 250px;
+    padding: 4px 8px;
+    }
+    .inputEmailDiv span{
+        padding: 4px 0;
+        font-size: 6px;
+    }
+  .footer-col{
+    width: 100%;
+    margin-bottom: 30px;
+}
+}
+
+
+
+
+
